@@ -1,0 +1,11 @@
+[Unit]
+Description=Force 1280x720 on DP-1
+After=lightdm.service
+Wants=lightdm.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/fix-display-mode.sh
+RemainAfterExit=yes
+[Install]
+WantedBy=graphical.target
